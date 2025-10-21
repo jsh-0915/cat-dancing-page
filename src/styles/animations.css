@@ -1,0 +1,102 @@
+/* Dancing Animations */
+
+/* Main Dance Animation - Combines multiple movements */
+.cat-wrapper.dancing {
+  animation:
+    bounce 0.6s ease-in-out infinite,
+    sway 1.2s ease-in-out infinite,
+    rotate 2.4s ease-in-out infinite;
+}
+
+/* Bounce Effect - Vertical movement */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.05);
+  }
+}
+
+/* Sway Effect - Horizontal swaying */
+@keyframes sway {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-20px);
+  }
+  75% {
+    transform: translateX(20px);
+  }
+}
+
+/* Rotation Effect - 3D rotation */
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: rotateZ(-10deg) rotateY(10deg);
+  }
+  50% {
+    transform: rotateZ(0deg) rotateY(0deg);
+  }
+  75% {
+    transform: rotateZ(10deg) rotateY(-10deg);
+  }
+  100% {
+    transform: rotateZ(0deg) rotateY(0deg);
+  }
+}
+
+/* Pulse Effect - Size pulsing */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Wiggle Effect - Quick shake */
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+/* Spin Effect - Full rotation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Float Effect - Gentle floating */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* GPU Acceleration for smooth performance */
+.cat-wrapper.dancing,
+.cat-image {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
